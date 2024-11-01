@@ -1,9 +1,9 @@
 <?php
 // Define as constantes do sistema
 //define("TIPO_CADASTRO","PF");
-define("URL_SGP", "https://ltitelecomba.sgp.net.br");
-define("TOKEN_SGP", "d9ff91f6-efd2-404c-95fa-7b658787f59a");
-define("APP_SGP", "site_lti");
+define("URL_SGP", "");
+define("TOKEN_SGP", "");
+define("APP_SGP", "");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Coleta os dados do formulário
