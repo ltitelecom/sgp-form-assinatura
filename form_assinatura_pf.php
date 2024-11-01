@@ -1,4 +1,16 @@
 <?php
+
+/* 
+###################################################
+# App: Formulário e Assinatura AJAX - SGP Provedor#
+# Versão: 1.0                                     #
+# Data: 01/11/2024                                #
+# Autor: Willemberg P. Santos                     #
+# Email: willembergps@gmail.com                   #
+# Site: https://www.ltitelecom.com.br             #
+###################################################
+*/
+
 // Define as constantes do sistema
 //define("TIPO_CADASTRO","PF");
 define("URL_SGP", ""); /// Ex: https://seuprovedor.sgp.net.br
