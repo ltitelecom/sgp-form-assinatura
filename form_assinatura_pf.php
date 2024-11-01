@@ -1,9 +1,9 @@
 <?php
 // Define as constantes do sistema
 //define("TIPO_CADASTRO","PF");
-define("URL_SGP", "");
-define("TOKEN_SGP", "");
-define("APP_SGP", "");
+define("URL_SGP", ""); /// Ex: https://seuprovedor.sgp.net.br
+define("TOKEN_SGP", ""); // Seu TOKEN de integração com a API, disponível no menu do SGP em -> Administração -> Integrações -> Tokens
+define("APP_SGP", ""); // Nome do APP criado no SGP, disponível em -> Administração -> Integrações -> Tokens
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Coleta os dados do formulário
@@ -257,7 +257,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2>Informe dos dados abaixo:</h2>
             </div>
             <div class="card-body">
-            <form action="processar_assinatura_pf.php" id="Assinar" method="POST">
+            <form action="form_assinatura_pf.php" id="Assinar" method="POST">
                     <!-- Dados do Assinante -->
                     <h3>Dados do Assinante</h3>
             <div class="form-group">

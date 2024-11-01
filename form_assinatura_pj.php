@@ -1,9 +1,9 @@
     <?php
-    // Define as constantes do sistema
-    //define("TIPO_CADASTRO","PJ");
-    define("URL_SGP", "");
-    define("TOKEN_SGP", "");
-    define("APP_SGP", "");
+        // Define as constantes do sistema
+        //define("TIPO_CADASTRO","PF");
+        define("URL_SGP", ""); /// Ex: https://seuprovedor.sgp.net.br
+        define("TOKEN_SGP", ""); // Seu TOKEN de integração com a API, disponível no menu do SGP em -> Administração -> Integrações -> Tokens
+        define("APP_SGP", ""); // Nome do APP criado no SGP, disponível em -> Administração -> Integrações -> Tokens
 
         
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -262,7 +262,7 @@
                     <h2>Informe dos dados abaixo:</h2>
                 </div>
                 <div class="card-body">
-                <form action="processar_assinatura_pj.php" id="Assinar" method="POST">
+                <form action="form_assinatura_pj.php" id="Assinar" method="POST">
                         <!-- Dados do Assinante -->
                         <h3>Dados do Assinante</h3>
                 <div class="form-group">
@@ -349,15 +349,25 @@
                     <label for="plano_id">Escolha o Plano:</label>
                     
                 <!-- Seleção de Plano -->
-                    <?php include 'select_planos.php'; ?>     
+                <?php
+                $planos = @include 'select_planos.php';
+                if ($planos === false) {
+                 echo "Erro ao incluir select_planos.php";
+                }
+                ?>     
                 <!-- FIM da Seleção de Plano -->
                 </div>
                 <h3>Data da fatura</h3>
                 <div class="form-group">
                     <label for="vencimento_id">Escolha o dia para pagamento:</label>
                     <!-- Seleção de Dia de Vencimento -->
-                    <?php include 'dias_vencimento.php'; ?>
-                    <!-- FIM da Seleção de Dia de Vencimento -->
+                <?php
+                $planos = @include 'dias_vencimento.php';
+                if ($planos === false) {
+                 echo "Erro ao incluir select_planos.php";
+                }
+                ?>
+                <!-- FIM da Seleção de Dia de Vencimento -->
                 </div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
