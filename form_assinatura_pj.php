@@ -1,20 +1,20 @@
-<?php
-    
-    /* 
-    ###################################################
-    # App: Formulário e Assinatura AJAX - SGP Provedor#
-    # Versão: 1.0                                     #
-    # Data: 01/11/2024                                #
-    # Autor: Willemberg P. Santos                     #
-    # Email: willembergps@gmail.com                   #
-    # Site: https://www.ltitelecom.com.br             #
-    ###################################################
-    */
-        // Define as constantes do sistema
-        //define("TIPO_CADASTRO","PF");
-        define("URL_SGP", ""); /// Ex: https://seuprovedor.sgp.net.br
-        define("TOKEN_SGP", ""); // Seu TOKEN de integração com a API, disponível no menu do SGP em -> Administração -> Integrações -> Tokens
-        define("APP_SGP", ""); // Nome do APP criado no SGP, disponível em -> Administração -> Integrações -> Tokens
+    <?php
+/* 
+###################################################
+# App: Formulário e Assinatura AJAX - SGP Provedor#
+# Versão: 1.0                                     #
+# Data: 01/11/2024                                #
+# Autor: Willemberg P. Santos                     #
+# Email: willembergps@gmail.com                   #
+# Site: https://www.ltitelecom.com.br             #
+###################################################
+*/
+
+    // Define as constantes do sistema
+    //define("TIPO_CADASTRO","PJ");
+    define("URL_SGP", "");
+    define("TOKEN_SGP", "");
+    define("APP_SGP", "");
 
         
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -270,12 +270,12 @@
     <div class="container">
             <div class="card">
                 <div class="card-title">
-                    <h2>Informe dos dados abaixo:</h2>
+                    <h2>Informe os dos da Empresa</h2>
                 </div>
                 <div class="card-body">
                 <form action="form_assinatura_pj.php" id="Assinar" method="POST">
                         <!-- Dados do Assinante -->
-                        <h3>Dados do Assinante</h3>
+                        <h3>Por favor, preencha os dados abaixo:</h3>
                 <div class="form-group">
                     <label for="nome">Nome:</label>
                     <input type="text" class="form-control" id="nome" name="nome" required>
@@ -343,19 +343,11 @@
                 <div class="form-group">
                     <label for="observacao">Tipo de Imóvel:</label>
                     <select class="form-control" id="observacao" name="observacao" required>
-                        <option value="Casa Própria">Próprio</option>
-                        <option value="casa Alugado">Alugado</option>
-                        <option value="Residencia dos Pais">Moro com meus pais</option>
+                        <option value="Imóvel Próprio">Próprio</option>
+                        <option value="Imóvel Alugado">Alugado</option>
+                        <option value="Imóvem de Terceiros">Imóvel de Terceiros</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="sexo">Sexo:</label>
-                    <select class="form-control" id="sexo" name="sexo" required>
-                        <option value="M">Masculino</option>
-                        <option value="F">Feminino</option>
-                    </select>
-                </div>
-                <h3>Escolha o Plano de Internet</h3>
                 <div class="form-group">
                     <label for="plano_id">Escolha o Plano:</label>
                     
@@ -368,7 +360,6 @@
                 ?>     
                 <!-- FIM da Seleção de Plano -->
                 </div>
-                <h3>Data da fatura</h3>
                 <div class="form-group">
                     <label for="vencimento_id">Escolha o dia para pagamento:</label>
                     <!-- Seleção de Dia de Vencimento -->
@@ -380,7 +371,7 @@
                 ?>
                 <!-- FIM da Seleção de Dia de Vencimento -->
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary">Contratar Agora!</button>
             </form>
         </div>
 

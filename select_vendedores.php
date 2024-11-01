@@ -1,5 +1,4 @@
 <?php
-
 /* 
 ###################################################
 # App: Formulário e Assinatura AJAX - SGP Provedor#

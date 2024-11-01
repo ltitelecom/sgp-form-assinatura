@@ -1,5 +1,4 @@
 <?php
-
 /* 
 ###################################################
 # App: Formulário e Assinatura AJAX - SGP Provedor#
@@ -13,9 +12,9 @@
 
 // Define as constantes do sistema
 //define("TIPO_CADASTRO","PF");
-define("URL_SGP", ""); /// Ex: https://seuprovedor.sgp.net.br
-define("TOKEN_SGP", ""); // Seu TOKEN de integração com a API, disponível no menu do SGP em -> Administração -> Integrações -> Tokens
-define("APP_SGP", ""); // Nome do APP criado no SGP, disponível em -> Administração -> Integrações -> Tokens
+define("URL_SGP", "");
+define("TOKEN_SGP", "");
+define("APP_SGP", "");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Coleta os dados do formulário
@@ -266,23 +265,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container">
         <div class="card">
             <div class="card-title">
-                <h2>Informe dos dados abaixo:</h2>
+                <h2>Informe dos dados do Assinante</h2>
             </div>
             <div class="card-body">
             <form action="form_assinatura_pf.php" id="Assinar" method="POST">
                     <!-- Dados do Assinante -->
-                    <h3>Dados do Assinante</h3>
+            <blockquote class="blockquote text-center">
+            <p class="h4">Formulários são chatos né?</p>
+            <footer class="blockquote-footer">Mas precisamos coletar algumas informações para sua assinatura, vamos lá?</footer>
+            </blockquote>
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" id="nome" name="nome" required>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite aqui seu nome..." required>
             </div>
             <div class="form-group">
                 <label for="cpfcnpj">CPF/CNPJ:</label>
-                <input type="text" class="form-control" id="cpfcnpj" name="cpfcnpj" placeholder="Somente número" required>
+                <input type="text" class="form-control" id="cpfcnpj" name="cpfcnpj" placeholder="Digite seu CPF sem pontos..." required>
             </div>
             <div class="form-group">
                 <label for="rg">RG:</label>
-                <input type="text" class="form-control" id="rg" name="rg"placeholder="Somente número" required>
+                <input type="text" class="form-control" id="rg" name="rg"placeholder="Digite seu RG sem pontos..." required>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
@@ -290,7 +292,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="form-group">
                 <label for="celular">Celular/WhatsApp:</label>
-                <input type="text" class="form-control" id="celular" name="celular" placeholder="Somente número" required>
+                <input type="text" class="form-control" id="celular" name="celular" placeholder="Informe o Celular/WhatsApp sem pontos..." required>
             </div>
             <div class="form-group">
                 <label for="datanasc">Data de Nascimento:</label>
@@ -306,7 +308,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="form-group">
                 <label for="complemento">Complemento:</label>
-                <input type="text" class="form-control" id="complemento" name="complemento">
+                <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Ex: AP-302, Bloco, Setor...">
+            </div>
+            <div class="form-group">
+                <label for="pontoreferencia">Ponto de Referência:</label>
+                <input type="text" class="form-control" id="pontoreferencia" name="pontoreferencia">
             </div>
             <div class="form-group">
                 <label for="bairro">Bairro:</label>
@@ -325,25 +331,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="text" class="form-control" id="uf" name="uf" placeholder="Exemplo: BA" required>
             </div>
             <div class="form-group">
-                <label for="pontoreferencia">Ponto de Referência:</label>
-                <input type="text" class="form-control" id="pontoreferencia" name="pontoreferencia">
-            </div>
-            <div class="form-group">
                 <label for="observacao">Tipo de Imóvel:</label>
                 <select class="form-control" id="observacao" name="observacao" required>
                     <option value="Casa Própria">Próprio</option>
-                    <option value="casa Alugado">Alugado</option>
+                    <option value="Casa Alugado">Alugado</option>
                     <option value="Residencia dos Pais">Moro com meus pais</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="sexo">Sexo:</label>
-                <select class="form-control" id="sexo" name="sexo" required>
-                    <option value="M">Masculino</option>
-                    <option value="F">Feminino</option>
-                </select>
-            </div>
-            <h3>Escolha o Plano de Internet</h3>
             <div class="form-group">
                 <label for="plano_id">Escolha o Plano:</label>
                 
@@ -351,14 +345,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php include 'select_planos.php'; ?>     
             <!-- FIM da Seleção de Plano -->
             </div>
-            <h3>Data da fatura</h3>
             <div class="form-group">
                 <label for="vencimento_id">Escolha o dia para pagamento:</label>
                 <!-- Seleção de Dia de Vencimento -->
                 <?php include 'dias_vencimento.php'; ?>
                 <!-- FIM da Seleção de Dia de Vencimento -->
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary">Contratar Agora!</button>
         </form>
     </div>
 
