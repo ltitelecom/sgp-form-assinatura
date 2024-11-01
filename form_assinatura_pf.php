@@ -11,10 +11,9 @@
 */
 
 // Define as constantes do sistema
-//define("TIPO_CADASTRO","PF");
-define("URL_SGP", "");
-define("TOKEN_SGP", "");
-define("APP_SGP", "");
+define("URL_SGP", "URL_DO_SEU_SGP"); // Ex: https://seuprovedor.sgp.net.br
+define("TOKEN_SGP", "SEUTOKEN"); // Seu TOKEN de integração com a API, disponível no menu do SGP em -> Administração -> Integrações -> Tokens
+define("APP_SGP", "SEU_APP"); // Nome do APP criado no SGP, disponível em -> Administração -> Integrações -> Tokens
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Coleta os dados do formulário
