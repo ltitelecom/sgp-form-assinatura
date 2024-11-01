@@ -2,6 +2,10 @@
 
 # Formulário de Cadastro com Integração AJAX
 
+## Compatibilidade
+
+Este script só é compatível até o momento com o Sistema SGP Provedor da TSMX - https://www.tsmx.net.br/sgp/
+
 Este projeto fornece uma interface web para selecionar e carregar formulários de cadastro de Pessoa Física (PF) e Pessoa Jurídica (PJ) com a funcionalidade de carregamento dinâmico usando AJAX. É uma solução ideal para aplicações que requerem integração com APIs externas, como o sistema de gerenciamento SGP.
 
 ## Funcionalidades
