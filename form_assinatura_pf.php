@@ -254,7 +254,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container">
         <div class="card">
             <div class="card-title">
-                <h2>Formulário de Assinatura</h2>
+                <h2>Informe dos dados abaixo:</h2>
             </div>
             <div class="card-body">
             <form id="Assinar" method="post">
