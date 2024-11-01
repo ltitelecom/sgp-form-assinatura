@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -180,32 +180,48 @@
 
 <script>
     $(document).ready(function() {
-        $('#tipoFormulario').on('change', function() {
-            var tipo = $(this).val();
-            var url = '';
+    $('#tipoCadastro').on('change', function() {
+        var tipo = $(this).val();
+        var url = '';
 
-            if (tipo === 'pf') {
-                url = 'form_assinatura_pf.php';
-            } else if (tipo === 'pj') {
-                url = 'form_assinatura_pj.php';
-            }
+        if (tipo === 'pf') {
+            url = 'form_assinatura_pf.php';
+        } else if (tipo === 'pj') {
+            url = 'form_assinatura_pj.php';
+        }
 
-            if (url) {
-                // Limpa o conteúdo do container antes de carregar um novo formulário
-                $('#formContainer').empty();
-                
-                // Carrega o formulário na div usando AJAX
-                $('#formContainer').load(url, function(response, status, xhr) {
-                    if (status == "error") {
-                        $('#formContainer').html('<div class="alert alert-danger" role="alert">Erro ao carregar o formulário: ' + xhr.status + ' ' + xhr.statusText + '</div>');
-                    }
-                });
-            } else {
-                // Limpa o container se a opção for "Selecione..."
-                $('#formContainer').empty();
+        if (url) {
+            $('#formContainer').empty();
+            $('#formContainer').load(url);
+        } else {
+            $('#formContainer').empty();
+        }
+    });
+
+    // Adiciona um evento de submit ao formulário carregado
+    $(document).on('submit', '#formContainer form', function(e) {
+        e.preventDefault(); // Previne o envio padrão do formulário
+
+        // Obtém os dados do formulário
+        var formData = $(this).serialize();
+
+        // Envia os dados via AJAX
+        $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'), // A URL para onde os dados serão enviados
+            data: formData,
+            success: function(response) {
+                // Processa a resposta do servidor
+                $('#formContainer').html('<div class="alert alert-success">Formulário enviado com sucesso!</div>');
+            },
+            error: function(xhr, status, error) {
+                // Trata erros
+                $('#formContainer').html('<div class="alert alert-danger">Erro ao enviar o formulário: ' + error + '</div>');
             }
         });
     });
+});
+
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

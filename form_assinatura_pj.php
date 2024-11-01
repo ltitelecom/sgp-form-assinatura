@@ -95,7 +95,7 @@
     }
     ?>
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -262,7 +262,7 @@
                     <h2>Informe dos dados abaixo:</h2>
                 </div>
                 <div class="card-body">
-                <form id="Assinar" method="post">
+                <form action="processar_assinatura_pj.php" id="Assinar" method="POST">
                         <!-- Dados do Assinante -->
                         <h3>Dados do Assinante</h3>
                 <div class="form-group">
