@@ -79,7 +79,10 @@
                 data: formData,
                 success: function(response) {
                     // Processa a resposta do servidor
-                    $('#formContainer').html('<div class="alert alert-success">Formulário enviado com sucesso!</div>');
+                    $('#formContainer').html('<div class="row text-center">' +
+                    '<div class="check_mark_img"><img class="imgSuccess" src="imgs/checkmark.png" alt="Image Success"></div>' +
+                    '<div class="sub_title"><span>Seus dados foram  enviados com sucesso.</span>' +
+                    '</div><div class="title pt-1"><h3>Obrigado por escolher a LTI Telecom!</h3></div></div>');
                 },
                 error: function(xhr, status, error) {
                     // Trata erros

@@ -148,3 +148,10 @@ label {
     background-color: #1584ff;
     border-color: #0877ff;
 }
+.imgSuccess {
+    display: block; /* Torna a imagem um elemento de bloco */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    max-width: 100%; /* Faz a imagem se ajustar à largura da div sem ultrapassá-la */
+    height: auto; /* Mantém a proporção da imagem */
+    width: 50%; /* Define uma largura específica, que pode ser ajustada */
+}
